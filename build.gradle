@@ -1,0 +1,41 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.lohika.aquasecurity'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	//compile('org.springframework.boot:spring-boot-starter-data-rest')
+	compile('org.springframework.boot:spring-boot-starter-hateoas')
+    //compile('org.hibernate:hibernate-java8:5.2.12.Final')
+    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0")
+
+
+    compileOnly('org.projectlombok:lombok')
+
+	runtime('org.postgresql:postgresql:42.1.4')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
+    testCompileOnly('org.projectlombok:lombok')
+//    testCompile('com.github.javafaker:javafaker:0.14')
+}

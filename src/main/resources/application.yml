@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/inventory
+    username: root
+    password: changeMe
+#    platform: POSTGRESQL
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+server:
+  port: 8989
