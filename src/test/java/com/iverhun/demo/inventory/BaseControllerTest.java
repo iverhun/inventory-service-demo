@@ -18,14 +18,8 @@ public class BaseControllerTest {
     @Autowired
     private WebApplicationContext context;
 
-//    @Autowired
-//    private Filter springSecurityFilterChain;
-
     @Autowired
     protected ItemRepository itemRepository;
-
-    @Autowired
-    private ItemService itemService;
 
     protected MockMvc mockMvc;
 
@@ -35,23 +29,12 @@ public class BaseControllerTest {
     @Before
     public void setUp() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
-//                .addFilters(springSecurityFilterChain)
                 .apply(MockMvcRestDocumentation.documentationConfiguration(this.restDocumentation))
                 .defaultRequest(options("/")
-//                        .with(new JwtRequestPostProcessor(tokenService))
                         .accept(HAL_JSON_CHARSET_UTF_8)
                         .contentType(HAL_JSON_CHARSET_UTF_8))
                 .build();
     }
-
-//    protected ResponseFieldsSnippet validationErrorResponseFieldSnippet = responseFields(
-//            fieldWithPath("_embedded.validationErrors").description("Errors that were found during validation."),
-//            fieldWithPath("_embedded.validationErrors[].property").description("Invalid property name of posted json entity."),
-//            fieldWithPath("_embedded.validationErrors[].message").description("The message, extracted from validation provider exception."),
-//            fieldWithPath("_embedded.validationErrors[].invalidValue").description("Invalid value that had not passed validation"));
-//
-//    protected ResponseFieldsSnippet errorMessageResponseFieldSnippet = responseFields(fieldWithPath("message").description("Error message."));
-//
 
     @After
     public void cleanUp() {
