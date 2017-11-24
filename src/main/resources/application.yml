@@ -15,3 +15,6 @@ spring:
       write_dates_as_timestamps: false
 server:
   port: 8989
+security:
+  user:
+    password: admin123
