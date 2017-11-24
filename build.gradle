@@ -26,7 +26,9 @@ repositories {
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-hateoas')
-    compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0")
+    compile('org.springframework.boot:spring-boot-starter-security')
+    compile('org.springframework.security.oauth:spring-security-oauth2:2.2.0.RELEASE')
+    compile('com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.4.0')
 
     compileOnly('org.projectlombok:lombok')
 
