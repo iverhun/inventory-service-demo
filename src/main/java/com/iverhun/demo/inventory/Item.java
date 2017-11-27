@@ -30,7 +30,7 @@ public class Item {
     @Column(columnDefinition = "serial")
     private long id;
 
-    @Column
+    @Column(unique = true)
     private String name;
 
     @Column
